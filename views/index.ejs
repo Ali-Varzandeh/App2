@@ -1,2 +1,21 @@
 <%- include('includes/header'); -%>
-<h2> welcome </h2>
+<h1>BuyMeByMe</h1><br>
+
+
+<%# for each product in products display the product's propertis. %> 
+<section>
+
+    <% products.forEach((product) => { %>
+      <article>
+        <div><h3><%- product.BRAND %></h3></div>
+        <div><%- product.NAME %></div><br>
+        <div>CATEGORY: <%- product.CATEGORY_TITLE  %></div>
+        <div><%- product.CCATEGORY_SUB %></div>
+        <div>Size: <%- product.SIZE  %></div>
+        <div>DESCRIPTION: <%- product.CATEGORY_DESCRIPTION %></div>
+      </article>
+    <% }); %>
+  </section>
+
+
+  

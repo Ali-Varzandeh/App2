@@ -35,7 +35,18 @@ app.use((req,res,next) => {
 // Root Routes 
 
 app.get('/', (req, res) => {
-  res.render('index')
+
+  const query = `SELECT PRODUCTS.NAME,PRODUCTS.SIZE,PRODUCTS.BRAND, CATEGORIES.CATEGORY_TITLE, CATEGORIES.CATEGORY_SUB, CATEGORIES.CATEGORY_DESCRIPTION 
+  FROM PRODUCTS
+  INNER JOIN CATEGORIES ON PRODUCTS.CATEGORY_ID=CATEGORIES.ID;`
+  connection.query (query, function (error, results, fields) {
+    if (error) throw error;
+    console.log(results);
+    res.render('index', { products: results})
+  
+  
+  });
+ 
 })
 
 
