@@ -1,0 +1,113 @@
+Home page
+        products devided by caregories
+                                    sql select all products from categories
+                                    hodejs group product by categories
+                                    ejs display products by categories 
+        category links   
+                    neads to be a navbar template and in include 
+category page
+            only products of one caregory
+            divided by sub caregories
+
+                                    sql select * products from one category
+                                    nodejs group product by subcategories
+                                    ejs display products by sub categories
+product page
+          images
+          all details
+          quntity drop down 
+          add to the basket button
+                                   sql select one product
+                                   nodjs none
+                                   ejs display one product
+                                   ejs button form
+                                   nodejs post route
+                                   sql insert product to basket
+basket page
+        all products in basket
+                                sql select * products from user basket
+                                nodejs none
+                                ejs display all products
+
+        reamove products from basket button
+                                ejs button form to reamove
+                                nodejs post route
+                                sql reamove products from basket
+        shippers drop down
+        address form
+        payment button 
+                                ejs from to create a payment  
+                                nodejs need post route
+                                sql create order 
+                                sql reset basket
+                                nodejs redirect to peyment sauccess page       
+                                
+                              
+
+
+
+payment sucsees page
+                message sucseesful  
+                          
+
+orders page
+        list all orders
+                     
+                               sql all user orders
+                               nodejs none
+                               ejs display all user orders
+
+
+
+admin page
+       add new product
+                                ejs button form
+                                nodejs post route
+                                sql insert product to products
+       reamove product
+                                ejs button form to reamove
+                                nodejs post route
+                                sql reamove product from products
+wishlist page
+profile page
+        users details
+                                sql user data
+                                none none 
+                                ejs display user data
+        update address form
+                                
+                                ejs form 
+                                nodejs none 
+                                sql update user address
+
+signin page
+        form
+                                ejs form
+                                nodejs check if details is correct 
+                                nodejs redirect id signin is unsuccessfull redirect to the signin page if successfull redirect to profill page
+                                
+signup page
+        form 
+                                ejs form 
+                                nodejs valedate form data (email , password )
+                                sql create new user 
+                                nodejs redirect to profile
+
+                                
+search page
+        form 
+                                ejs form
+                                nodejs none 
+                                sql find products
+                                nodejs none 
+                                ejs display products
+
+Product image
+Slideshow
+Background Image
+ABOUT US
+Logo
+ABOUT US
+CUSTOMER SERVICE
+FOLLOW US
+Terms & Conditions
