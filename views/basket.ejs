@@ -1,19 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<%- include('includes/head'); -%>
+<body>
 <%- include('includes/header'); -%>
+<%- include('includes/navbar'); -%>
 
 <%# for each product in products display the product's propertis. %> 
 <section>
   <div><h2> Shopping bag</h2></div> 
-  <% basket.forEach((basket) => { %>
+
+  <form action="/order" method="post">
+    <button type="submit">Place an order</button>
+  </form>
+
+  <% basket.forEach((product) => { %>
      
     <article>
-      <div> USERNAME: <%- basket.USERNAME %></div>
-        <div><h3>BRAND: <%- basket.BRAND_NAME %></h3></div>
-        <div>CATEGORY: <%- basket.CATEGORY%></div>
-        <div>SIZE: <%- basket.SIZE %></div>
-        <div>QUANTITY : <%- basket.QUANTITY %></div>
-        <div>ITEM SUBTOTAL: <%- basket.ITEM_SUBTOTAL %></div>
+      <div> name: <%- product.NAME %></div>
+        <div><h3>BRAND: <%- product.BRAND_NAME %></h3></div>
+
+        <div>SIZE: <%- product.SIZE %></div>
+        <div>COLOUR: <%- product.COLOUR %></div>
+        <div>QUANTITY : <%- product.QUANTITY %></div>
+        <div>DESCRIPTION: <%- product.PRO_DESCRIPTION %></div>
+
+        <form action="/product/delete/<%- product.ID %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
         
       </article>
     <% });%>
   </section>
 
+
+  <%- include('includes/script'); -%>
+</body>
+</html>

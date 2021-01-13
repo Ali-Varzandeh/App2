@@ -1,19 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<%- include('includes/head'); -%>
+<body>
 <%- include('includes/header'); -%>
+<%- include('includes/navbar'); -%>
+
 
 <%# for each product in products display the product's propertis. %> 
 <section>
 
     <% products.forEach((product) => { %>
       <article>
-        <div><%- product.ID  %></div>
         <div><h2>BRAND: <%- product.BRAND %></h2></div>
-        <div><%- product.NAME  %></div>
-        <div><%- product.UUID  %></div>
-        <div>Colour: <%- product.COLOUR %></div>
+        <div><a href= "/product/<%- product.ID %>"  class="link-primary"><%- product.NAME %></a></div>
+        <div>DESCRIPTION: <%- product.PRO_DESCRIPTION  %></div>
         <div>size: <%- product.SIZE %></div>
+        <div>Colour: <%- product.COLOUR %></div>
         <div>Quantity: <%- product.QUANTITY %></div>
       </article>
     <% }); %>
   </section>
-
-  
+   <%- include('includes/script'); -%>
+</body>
+</html>
+ 

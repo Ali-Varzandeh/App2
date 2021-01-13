@@ -1,21 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<%- include('includes/head'); -%>
+<body>
 <%- include('includes/header'); -%>
+<%- include('includes/navbar'); -%>
 
 <%# for each product in products display the product's propertis. %> 
 <section>
 
-  <form action="/product/<%- category.uuid%>" method="post">
-  <button>Add to bag</button>
-  </form>
-  
-      <article>
-        <div><h2>Brand: <%- category.brand_name %></h2></div>
-        <div><%- category.name  %></div>
-        <div><%- category.uuid  %></div>
-        <div>Colour: <%- category.colour %></div>
-        <div>size: <%- category.size %></div>
-        <div>Quantity: <%- category.quantity %></div>
-      </article>
-  </section>
 
   
+     
+        <article>
+          <div><h2>BRAND: <%- product.BRAND %></h2></div>
+          <div><%- product.NAME %></div>
+          <div>DESCRIPTION: <%- product.PRO_DESCRIPTION  %></div>
+          <div>size: <%- product.SIZE %></div>
+          <div>Colour: <%- product.COLOUR %></div>
+          <div>Quantity: <%- product.QUANTITY %></div>
+          <div> <img src ="<%- product.IMAGE %>"></div>
+        </article>
+
+        <form action="/product/<%- product.ID%>" method="post">
+          <button>Add to bag</button>
+          </form>
+  </section>
+
+  <%- include('includes/script'); -%>
+</body>
+</html>
   

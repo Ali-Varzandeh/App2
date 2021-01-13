@@ -1,7 +1,8 @@
 
 INSERT INTO CATEGORIES (CATEGORY_TITLE, CATEGORY_SUB, CATEGORY_DESCRIPTION)
-VALUES ('Mens CLOTHING ', 'Coats & Jackets' , 'CANADA GOOSE Coat, Exterior pockets, Hooded neck Zip fastening with button placket Regular fit
+VALUES ('Mens CLOTHING','Coats & Jackets' , 'CANADA GOOSE Coat, Exterior pockets, Hooded neck Zip fastening with button placket Regular fit
 Dry clean, Made in Canada');
+
 
 INSERT INTO CATEGORIES (CATEGORY_TITLE, CATEGORY_SUB, CATEGORY_DESCRIPTION)
 VALUES (' Womens CLOTHING', 'dresses','Midi Dress, Mushrooms, botanicals and polka dots, Autumn Print Pussybow Midi Dress, 100% Silk ');
@@ -81,8 +82,6 @@ INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DES
  front button placket and concealed press-stud fastening.',
  '6eb8d18c-482f-4c74-abbf-e9ce6cbf80ba');
 
-
-
 INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
 VALUES (5, 'The Barista Express Coffee Machine', 'SAGE', 'H40cm x W33cm x D31cm approx', 'Metallic', 1, 
 'Heston Blumenthal brings professional-grade coffee to the home kitchen with the Barista Express Coffee Machine by Sage. 
@@ -93,8 +92,6 @@ while a high power milk frothing arm means you can enjoy a latte, cappuccino or 
 Well-appointed with a warming tray and self-cleaning feature, everything has been thought of, including the sleek,
 ergonomic design that will look stylish atop your kitchen counter..',
 'fa0ba997-3236-43f5-a222-e660c3f8dd9d');
-
-
 
 INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
 VALUES (6, 'BATH MATS', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
