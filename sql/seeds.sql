@@ -45,7 +45,7 @@ The 100% combed cotton rich fibres create extra softness and absorbency., 100% C
 
 
 
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY,  PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY,  PRO_DESCRIPTION, IMAGE, UUID)
 VALUES ( 1 , 'Macculloch Parka', 'CANADA GOOSE', 'XL', 'Boulder Grey', 1,
 'The Macculloch parka is signature Canada Goose. Functional details – and there are many – are exaggerated to not only enhance 
 the comprehensive protection it offers but also to operate as part of the brand’s identity, earning the silhouette instant recognition on the street-style scene. 
@@ -60,29 +60,33 @@ Made in Canada.
 Lining: 100% Nylon
 Filling: 80% Down, 20% Feather
 Trims: 100% Coyote Fur',
+'/images/1.jpg',
  'bc7d650b-f778-4b8d-8f75-1bc1cd35a0b1');
 
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
  VALUES (2, 'Dresses', 'DOLCE & GABBANA', '38IT', 'Mix Uva/fungh/', 1, 
 'WOMENS DESIGNER DRESSES, No stranger to eccentricity, Dolce & Gabbana has rendered this midi dress in the Autumn print, 
  which sees an amalgamation of patterns come together for a maximalist finish. Crafted in Italy from sumptuous silk satin,
  this design is signature to the label and exudes luxury courtesy of the pussybow neckline and fluid fit.',
+ '/images/2.jpg',
 '55281671-4357-44bf-aa94-383d35273e05');
 
- INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+ INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
  VALUES (3, 'BOYS T-SHIRTS', 'YOUNG VERSACE', 'M', ' Nero', 2, 
  'He may have noticed the vintage-inspired designs taking over the world of streetwear as of late – or maybe not at all if he’s yet to discover his fashion 
   preferences – but either way, this Young Versace T-shirt is destined to become a staple in his wardrobe. While the craftsmanship is all about comfort with a 
   profile imagined in soft cotton, the design is very much about an effortlessly cool, distressed look with a faded Medusa logo across the chest..',
+  '/images/3.jpg',
   '05d42b6b-1c2a-4cb1-8ab3-9c39c2eda624');
 
- INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+ INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
  VALUES (4, 'BABY GIRLS Haymarket check romper', 'BURBERRY KIDS', '6MTHS', 'Archive Beige Ip Chk', 1, 
  'Beige/white/black/red cotton Haymarket check romper from BURBERRY KIDS featuring Haymarket check pattern, band collar, long sleeves, 
  front button placket and concealed press-stud fastening.',
+ '/images/4.jpg',
  '6eb8d18c-482f-4c74-abbf-e9ce6cbf80ba');
 
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
 VALUES (5, 'The Barista Express Coffee Machine', 'SAGE', 'H40cm x W33cm x D31cm approx', 'Metallic', 1, 
 'Heston Blumenthal brings professional-grade coffee to the home kitchen with the Barista Express Coffee Machine by Sage. 
 Extracting the full flavour of whole coffee beans by grinding them directly into the filter, the process, from bean to coffee, 
@@ -91,47 +95,53 @@ the machine offers espresso in both single and double shots, and the option to m
 while a high power milk frothing arm means you can enjoy a latte, cappuccino or flat white in the comfort of your own home.
 Well-appointed with a warming tray and self-cleaning feature, everything has been thought of, including the sleek,
 ergonomic design that will look stylish atop your kitchen counter..',
+'/images/5.jpg',
 'fa0ba997-3236-43f5-a222-e660c3f8dd9d');
 
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION,IMAGE, UUID)
 VALUES (6, 'BATH MATS', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
 'Made from pure combed cotton, this bold ombre mat is a soft and contemporary addition to your bedroom.
 Freshen up your bathroom decor with this eye-catching ombre ‘Stone’ bath mat from Abyss & Habidecor. 
 The tonal colour palette gives the illusion of a round stone and will add a thoroughly contemporary look to any bathroom. 
 The 100% combed cotton rich fibres create extra softness and absorbency, Machine wash',
+'/images/6.jpg',
 '1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
  
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
 VALUES (7, 'MENS SHIRT', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
 'Made from pure combed cotton, this bold ombre mat is a soft and contemporary addition to your bedroom.
 Freshen up your bathroom decor with this eye-catching ombre ‘Stone’ bath mat from Abyss & Habidecor. 
 The tonal colour palette gives the illusion of a round stone and will add a thoroughly contemporary look to any bathroom. 
 The 100% combed cotton rich fibres create extra softness and absorbency, Machine wash',
+'/images/7.jpg',
 '1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
  
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
 VALUES (8, 'WOMANS TOP', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
 'Made from pure combed cotton, this bold ombre mat is a soft and contemporary addition to your bedroom.
 Freshen up your bathroom decor with this eye-catching ombre ‘Stone’ bath mat from Abyss & Habidecor. 
 The tonal colour palette gives the illusion of a round stone and will add a thoroughly contemporary look to any bathroom. 
 The 100% combed cotton rich fibres create extra softness and absorbency, Machine wash',
+'/images/8.jpg',
 '1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
 
-INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
 VALUES (9, 'BOY HAT', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
 'Made from pure combed cotton, this bold ombre mat is a soft and contemporary addition to your bedroom.
 Freshen up your bathroom decor with this eye-catching ombre ‘Stone’ bath mat from Abyss & Habidecor. 
 The tonal colour palette gives the illusion of a round stone and will add a thoroughly contemporary look to any bathroom. 
 The 100% combed cotton rich fibres create extra softness and absorbency, Machine wash',
+'/images/9.jpg',
  '1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
  
- INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, UUID)
+INSERT INTO PRODUCTS ( CATEGORY_ID, NAME, BRAND, SIZE, COLOUR, QUANTITY, PRO_DESCRIPTION, IMAGE, UUID)
 VALUES (10, 'GIRLS SCARF', 'ABYSS & HABIDECOR', '70cm x 120cm', 'Li', 1, 
 'Made from pure combed cotton, this bold ombre mat is a soft and contemporary addition to your bedroom.
 Freshen up your bathroom decor with this eye-catching ombre ‘Stone’ bath mat from Abyss & Habidecor. 
 The tonal colour palette gives the illusion of a round stone and will add a thoroughly contemporary look to any bathroom. 
 The 100% combed cotton rich fibres create extra softness and absorbency, Machine wash',
- '1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
+'/images/10.jpg', 
+'1b7757f2-c6b9-42b9-804d-2a964af3d057 ');
 
 
 
@@ -148,8 +158,9 @@ INSERT INTO USERS ( USER_NAME, FIRST_NAME, LAST_NAME, PASSWORD, TEL, EMAIL, ADDR
 VALUES ('Ali007','Ali', 'Varzandeh','007','044764299742457754', 'A.Varzandeh@gmail.com', 1);
 
 
-INSERT INTO BASKETS (USER_ID, BRAND_NAME ,CATEGORY, SIZE, QUANTITY, ITEM_SUBTOTAL)
-VALUES (1,'CANADA GOOSE','Hybridge CW Element Jacket', '42', '1', '£3550');
+INSERT INTO BASKETS (USER_ID)
+VALUES (1);
+
 
 
 INSERT INTO SHIPPERS (COMPANY_NAME,TEL)

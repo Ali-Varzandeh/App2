@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<%- include('../includes/head'); -%> 
+<body>
+<%- include('../includes/header'); -%>
+<%- include('../includes/navbar'); -%>
+
+
+
+<section>
+    <h3>Products</h3>
+
+    <div>
+        <form action="/admin/product/add" method="post">
+            <div>
+                <label for="category_id">Category ID</label>
+                <input type="number" name="category_id">
+            </div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label for="brand">Brand</label>
+                <input type="text" name="brand">
+            </div>
+            <div>
+                <label for="size">Size</label>
+                <input type="number" name="size">
+            </div>
+            <div>
+                <label for="colour">Colour</label>
+                <input type="text" name="colour">
+            </div>
+            <div>
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity">
+            </div>
+            <div>
+                <label for="pro_description">Pro Description</label>
+                <textarea name="pro_description"></textarea>
+            </div>
+            <div>
+                <label for="image">Image</label>
+                <input type="text" name="image">
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
+    <ul>
+        <% products.forEach((product) => { %>
+            <li>
+                <a href="/product/<%- product.ID %>" class="link-dark">[ <%- product.ID %> ] <%- product.NAME %> 
+                </a>
+                <form action="/admin/product/delete/<%- product.ID %>" method="post">
+                    <button class="btn btn-danger">Delete</button>      
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+  </section>
+  <%- include('../includes/script'); -%>
+</body>
+</html>
+  

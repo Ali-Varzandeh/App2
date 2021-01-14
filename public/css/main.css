@@ -205,7 +205,7 @@ ul{
 	padding: 0;
 }
 a, a:hover, a.active, a:active, a:visited, a:focus{
-	color:#fefefe;
+	/* color:#fefefe; */
 	text-decoration:none;
 }
 .exo-menu {
