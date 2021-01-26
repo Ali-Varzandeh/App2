@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include('includes/head'); -%>
+  <body>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%>
+
+    <section>
+      <form action="/login" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="USER_NAME"
+            value="Ali007"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="PASSWORD"
+            value="007"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </form>
+    </section>
+
+    <%- include('includes/script'); -%>
+  </body>
+</html>

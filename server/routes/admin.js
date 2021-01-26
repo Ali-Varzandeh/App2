@@ -5,7 +5,7 @@ const adminRootRoute = (app, connection) => {
             connection.query('SELECT * FROM PRODUCTS', function (error, results, fields) {
                 if (error) throw error;
                 console.log(results);
-                res.render('admin/index', {products: results})
+                res.render('admin/index', {user: req.user,products: results})
         });
     })
 }

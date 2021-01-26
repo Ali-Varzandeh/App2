@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include('includes/head'); -%>
+  <body>
+    <%- include('includes/header'); -%> 
+    <%- include('includes/navbar'); -%> 
+    <%- include('includes/flash'); -%>
+
+    <section>
+      <form action="/signup" method="post">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            aria-describedby="username"
+            name="username"
+            value="TestUser"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            value="38409309483"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+    </section>
+
+    <%- include('includes/script'); -%>
+  </body>
+</html>
