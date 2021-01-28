@@ -296,7 +296,8 @@
                  <nav>
                     <div class="container">
                         <ul class="navbar-left"> 
-                        </ul> <!--end navbar-left -->
+						</ul> 
+						<!--end navbar-left -->
                              <ul class="navbar-right">
 								<% if (!user) { %>
 								 <li>
@@ -308,11 +309,14 @@
 								 <% } %>
 								 <% if (user) { %>
 									<li><a href="/user">User</a></li>
-								 <li>
-									 <form action="/logout" method="POST">
-										<input type="submit" value="Logout"> 
-									</form>
-								 </li>
+									<li>
+										<form action="/logout" method="POST">
+											<input type="submit" value="Logout"> 
+										</form
+									</li>
+								<% } %>
+								 <% if (user && user.IS_ADMIN === 1) { %>
+									<li><a href="/admin2">Admin</a></li>
 								 <% } %>
 								 <% if (user) { %>
 								<li><a href="/basket" id="cart"><i class="fa fa-shopping-cart"></i> Cart </a></li>

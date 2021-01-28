@@ -28,6 +28,7 @@ app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "public/css"));
 app.use("/img", express.static(__dirname + "public/img"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
 // session
 const sess = {
   secret: "48rh8es9hffhs94h89rhsfisdhh498h4hfskhkfh4h49h4hsk.,",
@@ -48,14 +49,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(function (user, done) {
   console.log("serialize")
-  console.log(user)
+  // console.log(user)
   done(null, user);
 
 });
 
 passport.deserializeUser(function (user, done) {
   console.log("deserialize")
-  console.log(user)
+  // console.log(user)
   done(null, user);
 });
 passport.use(
@@ -94,6 +95,8 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
 // Root Routes
 app.get("/", (req, res) => {
   const query = `SELECT PRODUCTS.ID, PRODUCTS.NAME,PRODUCTS.SIZE,PRODUCTS.BRAND, CATEGORIES.CATEGORY_TITLE, CATEGORIES.CATEGORY_SUB, CATEGORIES.CATEGORY_DESCRIPTION 
@@ -101,8 +104,8 @@ app.get("/", (req, res) => {
   INNER JOIN CATEGORIES ON PRODUCTS.CATEGORY_ID=CATEGORIES.ID;`;
   connection.query(query, function (error, results, fields) {
     if (error) throw error;
-    console.log(results);
-    res.render("index", { user: req.user, products: results });
+    // console.log(results);
+    res.render("index", { message: req.flash("error"), user: req.user, products: results });
   });
 });
 
@@ -118,7 +121,7 @@ app.get("/products", (req, res) => {
   connection.query("SELECT * from products", function (error, results, fields) {
     if (error) throw error;
     console.log(results);
-    res.render("products", { user: req.user,products: results });
+    res.render("products", { message: req.flash("error"), user: req.user, products: results });
   });
 });
 
@@ -135,7 +138,7 @@ app.get("/products/:category_id/:sub_category", (req, res) => {
     console.log(error);
     if (error) throw error;
     console.log(results);
-    res.render("products", { user: req.user,products: results });
+    res.render("products", { message: req.flash("error"), user: req.user,products: results });
   });
 });
 
@@ -146,14 +149,14 @@ app.get("/product/:id", (req, res) => {
       console.log(error);
       if (error) throw error;
       console.log(results);
-      res.render("product", { user: req.user,product: results[0] });
+      res.render("product", { message: req.flash("error"), user: req.user,product: results[0] });
     }
   );
 });
 
 // EXECUTE ALL ROUTES
 routes.forEach((routesGroup) => {
-  routesGroup.forEach((route) => route(app, connection));
+  routesGroup.forEach((route) => { console.log(route); route(app, connection) });
 });
 
 app.listen(port, () => {

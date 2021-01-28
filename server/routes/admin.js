@@ -1,27 +1,46 @@
 const { v4: uuidv4 }  = require('uuid')
 
+// middleware for authorization
+// checks if the user can access ("is authorized") a certain route
+const adminIsAuthorized = (req,res,next) => { 
+    //https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_client_errors
+    //403 -> Forbidden (unAuthorized)
+    // && -> AND
+    // if user loggedIn AND user is admin, then pass
+    console.log("ADMIN AUTH")
+    console.log(req.user?.IS_ADMIN)
+    console.log("/ADMIN AUTH")
+    if (req.user && req.user?.IS_ADMIN === 1) { 
+        next();
+    } else {
+        req.flash("error", "You are not authorized to access this page.")
+        return res.status(403).redirect(301, '/')
+    }
+  }
+
 const adminRootRoute = (app, connection) => {
-        app.get('/admin', (req, res) => {
+        app.get('/admin2', adminIsAuthorized, (req, res) => {
+            console.log("ADMIN route")
             connection.query('SELECT * FROM PRODUCTS', function (error, results, fields) {
                 if (error) throw error;
-                console.log(results);
-                res.render('admin/index', {user: req.user,products: results})
+                // console.log(results);
+                res.render('admin/index', {message: req.flash("error"), user: req.user,products: results})
         });
     })
 }
 
 const adminRemoveProductRoute = (app, connection) => {
-    app.post('/admin/product/delete/:id', (req, res) => {
+    app.post('/admin/product/delete/:id', adminIsAuthorized, (req, res) => {
         connection.query(`DELETE FROM PRODUCTS WHERE ID=${req.params.id}`, (err, results, fields) => {
             if(err) throw err;
-            res.status(201).redirect(301, '/admin')
+            res.status(201).redirect(301, '/admin2')
         })
     })
 }
 
 // add a new product
 const adminAddProductRoute = (app, connection) => {
-    app.post('/admin/product/add', (req, res) => {
+    app.post('/admin/product/add', adminIsAuthorized, (req, res) => {
 
         console.log(`adminAddProductRoute BODY: ${req.body}`)
 
@@ -51,7 +70,7 @@ const adminAddProductRoute = (app, connection) => {
         `
         connection.query(query, (err, results, fields) => {
             if(err) throw err;
-            res.status(201).redirect(301, '/admin')
+            res.status(201).redirect(301, '/admin2')
         })
     })
 }

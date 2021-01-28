@@ -2,7 +2,15 @@ const passport = require('passport')
 
 // middleware for authorization
 // checks if the user can access ("is authorized") a certain route
-const userIsAuthorized = (req,res,next) => next();
+const userIsAuthorized = (req,res,next) => { 
+  //https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_client_errors
+  //403 -> Forbidden (unAuthorized)
+  if (!req.user) { 
+    req.flash("error", "You are not authorized to access this page.")
+    return res.status(403).redirect(301, '/')
+  }
+  next();
+}
 // passport.authorize('local', { failureRedirect: '/' }, (req, res, msg) => { 
 //   console.log(msg)
 // })
@@ -19,7 +27,7 @@ const basketRoute = (app, connection) => {
           connection.query(query, function (error, results, fields) {
             if (error) throw error; //if ther is an error ther stop excution of the callback function.
             console.log(results);
-            res.render('basket', { user: req.user,basket: results}) // it take the result of the query and insert to the basket template and generate HTML and send it to the browser 
+            res.render('basket', { message: req.flash("error"), user: req.user,basket: results}) // it take the result of the query and insert to the basket template and generate HTML and send it to the browser 
           });  
         })
 }
@@ -39,13 +47,13 @@ const userRoute = (app, connection) => {
       connection.query(queryUser,  (err, userResults, fields) =>{
         if (err) throw err;
         if (userResults[0] == undefined) throw new Error("No user in the DB");
-        console.log('userResults: ', userResults);
+        // console.log('userResults: ', userResults);
 
         connection.query(queryOrders, (err, ordersResults, fields) =>{
           if (err) throw err;
-          console.log('ordersResults: ', ordersResults);
+          // console.log('ordersResults: ', ordersResults);
 
-          res.render('user' , { user: userResults[0], orders: ordersResults })
+          res.render('user' , { message: req.flash("error"), user: req.user, orders: ordersResults })
 
         })
         })
