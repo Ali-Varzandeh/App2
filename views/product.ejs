@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 
 <html>
-<%- include('includes/head'); -%>
-<body>
-<%- include('includes/header'); -%>
-<%- include('includes/navbar'); -%>
-<%- include('includes/flash'); -%>
+  <%- include('includes/head'); -%>
+  <body>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%> <%# for each product in products display the
+    product's propertis. %>
+    <section>
+      <article>
+        <div><h2>BRAND: <%- product.BRAND %></h2></div>
+        <div><%- product.NAME %></div>
+        <div>DESCRIPTION: <%- product.PRO_DESCRIPTION %></div>
+        <div>size: <%- product.SIZE %></div>
+        <div>Colour: <%- product.COLOUR %></div>
+        <div>Quantity: <%- product.QUANTITY %></div>
+        <div><img src="<%- product.IMAGE %>" /></div>
+      </article>
 
-<%# for each product in products display the product's propertis. %> 
-<section>
+      <form action="/product/<%- product.ID%>" method="post">
+        <button type="submit">Add to bag</button>
+      </form>
+    </section>
 
-
-  
-     
-        <article>
-          <div><h2>BRAND: <%- product.BRAND %></h2></div>
-          <div><%- product.NAME %></div>
-          <div>DESCRIPTION: <%- product.PRO_DESCRIPTION  %></div>
-          <div>size: <%- product.SIZE %></div>
-          <div>Colour: <%- product.COLOUR %></div>
-          <div>Quantity: <%- product.QUANTITY %></div>
-          <div> <img src ="<%- product.IMAGE %>"></div>
-        </article>
-
-        <form action="/product/<%- product.ID%>" method="post">
-          <button type="submit">Add to bag</button>
-          </form>
-  </section>
-
-  <%- include('includes/script'); -%>
-</body>
+    <%- include('includes/script'); -%>
+  </body>
 </html>
-  

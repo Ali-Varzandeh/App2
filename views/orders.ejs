@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <%- include('includes/head'); -%>
+  <body>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%>
+
+    <section>
+      <article>
+        <h2>ORDERS</h2>
+        <% orders.forEach((order) => { %>
+        <div>ORDER ID: <%- order.ORDER_ID%></div>
+        <div>SHIPPING DATE: <%- order.SHIPPING_DATE%></div>
+        <% }) %>
+      </article>
+    </section>
+
+    <%- include('includes/script'); -%>
+  </body>
+</html>

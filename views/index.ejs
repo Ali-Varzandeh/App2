@@ -3,15 +3,12 @@
 <html>
   <%- include('includes/head'); -%>
   <body>
-    <%- include('includes/header'); -%> 
-    <%- include('includes/navbar'); -%>
-    <%- include('includes/flash'); -%>
-    
-     <%#for each product in products display the product's propertis. %>
-    <section>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%> <%#for each product in products display the
+    product's propertis. %>
+    <div class="card-group" style="width: 100%">
       <% products.forEach((product) => { %>
-      <article>
-        <div><h3><%- product.BRAND %></h3></div>
+      <!-- <div><h3><%- product.BRAND %></h3></div>
         <div><%- product.NAME %></div>
         <br />
         <div>CATEGORY: <%- product.CATEGORY_TITLE %></div>
@@ -20,10 +17,23 @@
         <div>DESCRIPTION: <%- product.CATEGORY_DESCRIPTION %></div>
         <a href="/product/<%- product.ID %>" class="btn btn-primary"
           >See details</a
-        >
-      </article>
+        > -->
+
+      <div class="card" style="flex: 1 0 20%">
+        <img
+          src="/images/download.jpeg"
+          class="card-img-top"
+          alt="<%- product.NAME %>"
+        />
+        <div class="card-body">
+          <a href="/product/<%- product.ID %>" class="btn btn-primary"
+            >Details</a
+          >
+        </div>
+      </div>
+
       <% }); %>
-    </section>
+    </div>
     <%- include('includes/script'); -%>
   </body>
 </html>

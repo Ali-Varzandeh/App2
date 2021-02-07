@@ -3,10 +3,9 @@
 <html>
   <%- include('includes/head'); -%>
   <body>
-    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> 
-    <%- include('includes/flash'); -%>
-    <%#
-    for each product in products display the product's propertis. %>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%> <%# for each product in products display the
+    product's propertis. %>
     <section>
       <div><h2>Shopping bag</h2></div>
 
@@ -24,7 +23,7 @@
       </form>
 
       <% basket.forEach((product) => { %>
-
+      <p>nonsense</p>
       <article>
         <div>name: <%- product.NAME %></div>
         <div><h3>BRAND: <%- product.BRAND_NAME %></h3></div>

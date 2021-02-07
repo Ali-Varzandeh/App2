@@ -1,71 +1,111 @@
 <!DOCTYPE html>
 
 <html>
-<%- include('../includes/head'); -%> 
-<body>
-<%- include('../includes/header'); -%>
-<%- include('../includes/navbar'); -%>
-<%- include('../includes/flash'); -%>
+  <%- include('../includes/head'); -%>
+  <body>
+    <%- include('../includes/header'); -%> <%- include('../includes/navbar');
+    -%> <%- include('../includes/flash'); -%>
 
+    <section>
+      <h3>Products</h3>
 
-<section>
-    <h3>Products</h3>
-
-    <div>
-        <form action="/admin/product/add" method="post">
-            <div>
-                <label for="category_id">Category ID</label>
-                <input type="number" name="category_id">
-            </div>
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name">
-            </div>
-            <div>
-                <label for="brand">Brand</label>
-                <input type="text" name="brand">
-            </div>
-            <div>
-                <label for="size">Size</label>
-                <input type="number" name="size">
-            </div>
-            <div>
-                <label for="colour">Colour</label>
-                <input type="text" name="colour">
-            </div>
-            <div>
-                <label for="quantity">Quantity</label>
-                <input type="number" name="quantity">
-            </div>
-            <div>
-                <label for="pro_description">Pro Description</label>
-                <textarea name="pro_description"></textarea>
-            </div>
-            <div>
-                <label for="image">Image</label>
-                <input type="text" name="image">
-            </div>
-            <div>
-                <input type="submit" value="Submit">
-            </div>
+      <div>
+        <form class="login" action="/admin/product/add" method="post">
+          <div class="mb-3">
+            <label for="category_id" class="form-label">Category ID</label>
+            <input type="number" name="category_id" class="form-control" />
+          </div>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" />
+          </div>
+          <div>
+            <label for="brand">Brand</label>
+            <input type="text" name="brand" />
+          </div>
+          <div>
+            <label for="size">Size</label>
+            <input type="number" name="size" />
+          </div>
+          <div>
+            <label for="colour">Colour</label>
+            <input type="text" name="colour" />
+          </div>
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" />
+          </div>
+          <div>
+            <label for="pro_description">Pro Description</label>
+            <textarea name="pro_description"></textarea>
+          </div>
+          <div>
+            <label for="image">Image</label>
+            <input type="text" name="image" />
+          </div>
+          <div>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+          </div>
         </form>
-    </div>
+      </div>
 
-    <hr>
+      <hr />
 
-    <ul>
+      <ul>
         <% products.forEach((product) => { %>
-            <li>
-                <a href="/product/<%- product.ID %>" class="link-dark">[ <%- product.ID %> ] <%- product.NAME %> 
-                </a>
-                <form action="/admin/product/delete/<%- product.ID %>" method="post">
-                    <button class="btn btn-danger">Delete</button>      
-                </form>
-            </li>
+        <li>
+          <a href="/product/<%- product.ID %>" class="link-dark"
+            >[ <%- product.ID %> ] <%- product.NAME %>
+          </a>
+
+          <!-- EDIT BUTTON -->
+          <form
+            class="login"
+            action="/admin/product/edit/<%- product.ID %>"
+            method="post"
+          >
+            <div>
+              <label for="brand">Brand</label>
+              <input type="text" name="brand" value="<%- product.BRAND %>" />
+            </div>
+            <div>
+              <label for="size">Size</label>
+              <input type="number" name="size" value="<%- product.SIZE %>" />
+            </div>
+            <div>
+              <label for="colour">Colour</label>
+              <input type="text" name="colour" value="<%- product.COLOUR %>" />
+            </div>
+            <div>
+              <label for="quantity">Quantity</label>
+              <input
+                type="number"
+                name="quantity"
+                value="<%- product.QUANTITY %>"
+              />
+            </div>
+            <div>
+              <label for="pro_description">Pro Description</label>
+              <textarea name="pro_description">
+ <%- product.PRO_DESCRIPTION %></textarea
+              >
+            </div>
+            <div>
+              <label for="image">Image</label>
+              <input type="text" name="image" value="<%- product.IMAGE %>" />
+            </div>
+
+            <button class="btn btn-primary">Edit</button>
+          </form>
+
+          <!-- DELETE BUTTON -->
+          <form action="/admin/product/delete/<%- product.ID %>" method="post">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </li>
         <% }); %>
-    </ul>
-  </section>
-  <%- include('../includes/script'); -%>
-</body>
+      </ul>
+    </section>
+    <%- include('../includes/script'); -%>
+  </body>
 </html>
-  

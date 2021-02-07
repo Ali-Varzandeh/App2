@@ -257,7 +257,7 @@
 						<div class="row">
 						 <div class="col-md-4">
 							<h4 class="row mega-title">Feature</h4>
-								<img class="img-responsive" src="/images/Electrics/Electrics.jpg">
+								<img class="img-responsive" src="/images/Electrics/Electrics1.jpg">
 							</div>
 							<div class="col-md-2">
 									<h4 class="row mega-title">CLOTHING</h4>
@@ -295,16 +295,15 @@
             </li>
                  <nav>
                     <div class="container">
-                        <ul class="navbar-left"> 
-						</ul> 
+                        
 						<!--end navbar-left -->
                              <ul class="navbar-right">
 								<% if (!user) { %>
 								 <li>
-									 <a href="/signup">Signup</a>
+									 <a href="/signup" class="nav-signup-login">Signup</a>
 								 </li>
 								 <li>
-									 <a href="/login">Login</a>
+									 <a href="/login" class="nav-signup-login">Login</a>
 								 </li>
 								 <% } %>
 								 <% if (user) { %>
@@ -312,11 +311,11 @@
 									<li>
 										<form action="/logout" method="POST">
 											<input type="submit" value="Logout"> 
-										</form
+										</form>
 									</li>
 								<% } %>
 								 <% if (user && user.IS_ADMIN === 1) { %>
-									<li><a href="/admin2">Admin</a></li>
+									<li><a href="/admin">Admin</a></li>
 								 <% } %>
 								 <% if (user) { %>
 								<li><a href="/basket" id="cart"><i class="fa fa-shopping-cart"></i> Cart </a></li>

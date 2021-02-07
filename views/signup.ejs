@@ -3,12 +3,14 @@
 <html>
   <%- include('includes/head'); -%>
   <body>
-    <%- include('includes/header'); -%> 
-    <%- include('includes/navbar'); -%> 
-    <%- include('includes/flash'); -%>
+    <video id="videoBg" poster="poster1.jpg" autoplay muted loop>
+      <source src="/images/BackgroundIm/signup.mp4" type="video/mp4" />
+    </video>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%>
 
     <section>
-      <form action="/signup" method="post">
+      <form class="signup" action="/signup" method="post">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input
@@ -30,9 +32,8 @@
             value="123"
           />
         </div>
-        
+
         <button type="submit" class="btn btn-primary">Sign up</button>
-        
       </form>
     </section>
 

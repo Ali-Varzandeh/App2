@@ -2,12 +2,17 @@
 
 <html>
   <%- include('includes/head'); -%>
+
   <body>
-    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> 
-    <%- include('includes/flash'); -%>
+    <!-- <video id="videoBg" poster="poster.jpg" autoplay muted loop>
+      <source src="/images/BackgroundIm/ShoppingBg.mp4" type="video/mp4" />
+    </video> -->
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%>
+    <%-include('includes/flash'); -%>
 
     <section>
-      <form action="/login" method="post">
+      <form class="login" action="/login" method="post">
+        <!-- Username input -->
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Username</label>
           <input
@@ -19,6 +24,8 @@
             value="Ali007"
           />
         </div>
+
+        <!-- Password input -->
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input
@@ -29,6 +36,8 @@
             value="007"
           />
         </div>
+
+        <!-- Login button -->
         <button type="submit" class="btn btn-primary">Log In</button>
       </form>
     </section>

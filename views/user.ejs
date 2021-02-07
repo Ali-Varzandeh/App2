@@ -3,28 +3,23 @@
 <html>
   <%- include('includes/head'); -%>
   <body>
-    <%- include('includes/header'); -%> 
-    <%- include('includes/navbar'); -%>
-    <%- include('includes/flash'); -%>
+    <%- include('includes/header'); -%> <%- include('includes/navbar'); -%> <%-
+    include('includes/flash'); -%>
 
-  <section>
+    <section>
       <article>
         <div><h2>USERNAME: <%- user.USER_NAME%></h2></div>
         <div>FIRSTNAME: <%- user.FIRST_NAME%></div>
         <div>LASTNAME: <%- user.LAST_NAME%></div>
         <div>TEL: <%- user.TEL%></div>
         <div>EMAIL: <%- user.EMAIL%></div>
-
-        <h2>ORDERS</h2>
-        <% orders.forEach((order) => { %>
-        <div>ORDER ID: <%- order.ORDER_ID%></div>
-        <div>SHIPPING DATE: <%- order.SHIPPING_DATE%></div>
-        <% }) %>
       </article>
-      
-  </section>
+    </section>
 
-  <%- include('includes/script'); -%>
-</body>
+    <section>
+      <a href="/orders" class="btn btn-primary">My Orders</a>
+    </section>
+
+    <%- include('includes/script'); -%>
+  </body>
 </html>
-  
